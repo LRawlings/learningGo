@@ -62,3 +62,13 @@ func TestHasPrefix(t *testing.T) {
 		t.Errorf("expect %v but got %v", expected, hasPrefix)
 	}
 }
+
+func TestJoin(t *testing.T) {
+	ciders := []string{"Thatchers Gold", "Beesting", "Old Rosie"}
+	join := concatenate(ciders, ", ")
+	expected := "Thatchers Gold, Beesting, Old Rosie"
+
+	if join != expected {
+		t.Errorf("expect %q but got %q", expected, join)
+	}
+}
