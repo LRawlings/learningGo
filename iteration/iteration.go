@@ -17,3 +17,7 @@ func hasPrefix(phrase, prefix string) bool {
 func concatenate(elements []string, separator string) string {
 	return strings.Join(elements, separator)
 }
+
+func replace(phrase, old, new string) string {
+	return strings.Replace(phrase, old, new, 1)
+}

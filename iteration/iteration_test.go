@@ -72,3 +72,12 @@ func TestJoin(t *testing.T) {
 		t.Errorf("expect %q but got %q", expected, join)
 	}
 }
+
+func TestReplace(t *testing.T) {
+	replace := replace("Sweet Cider is lovely", "lovely", "undrinkable")
+	expected := "Sweet Cider is undrinkable"
+
+	if replace != expected {
+		t.Errorf("Expected %q but got %q", expected, replace)
+	}
+}
