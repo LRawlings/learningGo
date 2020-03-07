@@ -35,3 +35,21 @@ func TestContains(t *testing.T) {
 		t.Errorf("expect %v but got %v", expected, contains)
 	}
 }
+
+func TestCount(t *testing.T) {
+	count := strings.Count("cheddar valley", "e")
+	expected := 2
+
+	if count != expected {
+		t.Errorf("expect %v but got %v", expected, count)
+	}
+}
+
+func TestCountBlank(t *testing.T) {
+	count := strings.Count("cheddar valley", "")
+	expected := 15
+
+	if count != expected {
+		t.Errorf("expect %v but got %v", expected, count)
+	}
+}
