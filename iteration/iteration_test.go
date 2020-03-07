@@ -53,3 +53,12 @@ func TestCountBlank(t *testing.T) {
 		t.Errorf("expect %v but got %v", expected, count)
 	}
 }
+
+func TestHasPrefix(t *testing.T) {
+	hasPrefix := hasPrefix("Farmhouse Cider", "Farmhouse ")
+	expected := true
+
+	if hasPrefix != expected {
+		t.Errorf("expect %v but got %v", expected, hasPrefix)
+	}
+}
