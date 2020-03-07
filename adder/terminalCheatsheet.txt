@@ -1,0 +1,11 @@
+**run tests**
+go test
+
+**run tests -full output**
+go test -v
+
+**run documentation server**
+godoc -http=:6060
+
+--then navigate to--
+http://localhost:6060/pkg/
