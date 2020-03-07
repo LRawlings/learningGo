@@ -2,6 +2,7 @@ package iteration
 
 import (
 	"fmt"
+	"strings"
 	"testing"
 )
 
@@ -24,4 +25,13 @@ func ExampleRepeat() {
 	repeat := Repeat("b", 9)
 	fmt.Println(repeat)
 	// Output: bbbbbbbbb
+}
+
+func TestContains(t *testing.T) {
+	contains := strings.Contains("cider", "der")
+	expected := true
+
+	if contains != expected {
+		t.Errorf("expect %v but got %v", expected, contains)
+	}
 }
