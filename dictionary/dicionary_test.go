@@ -41,6 +41,30 @@ func TestAdd(t *testing.T){
 	})
 }
 
+func TestUpdate(t *testing.T) {
+	t.Run("update a word's definition", func(t *testing.T){
+		word := "test"
+		definition := "this is just a test"
+		dictionary := Dictionary{word:definition}
+		newDefinition := "a new definition"
+
+		dictionary.Update(word, newDefinition)
+
+		assertDefinition(t, dictionary, word, newDefinition)
+	})
+
+	t.Run("update definition when word does not exist", func(t *testing.T){
+		dictionary := Dictionary{}
+		word := "test"
+		definition := "this is just a test"
+
+		err := dictionary.Update(word, definition)
+
+		assertError(t, err, ErrWordDoesNotExist)
+
+	})
+}
+
 func assertDefinition(t *testing.T, dictionary Dictionary, word, definition string) {
 	t.Helper()
 
