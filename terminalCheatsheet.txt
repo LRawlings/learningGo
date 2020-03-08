@@ -12,3 +12,6 @@ http://localhost:6060/pkg/
 
 **test coverage**
 go test -cover
+
+**install error checking**
+go get -u github.com/kisielk/errcheck
