@@ -15,3 +15,9 @@ go test -cover
 
 **install error checking**
 go get -u github.com/kisielk/errcheck
+
+**run benchmark test**
+go test -bench="."
+
+**spot race conditions**
+go test -race
