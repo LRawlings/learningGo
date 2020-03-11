@@ -9,14 +9,14 @@ func walk(x interface{}, fn func(input string)) {
 	var getField func(int) reflect.Value
 
 	switch val.Kind() {
+	case reflect.String:
+		fn(val.String())
 	case reflect.Struct:
 		numberOfValues = val.NumField()
 		getField = val.Field
-	case reflect.Slice:
+	case reflect.Slice, reflect.Array:
 		numberOfValues = val.Len()
 		getField = val.Index
-	case reflect.String:
-		fn(val.String())
 	}
 
 	for i := 0; i < numberOfValues; i++ {
