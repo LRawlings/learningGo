@@ -21,3 +21,6 @@ go test -bench="."
 
 **spot race conditions**
 go test -race
+
+**examines Go source code and reports suspicious constructs**
+go vet
