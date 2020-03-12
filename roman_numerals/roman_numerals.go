@@ -1,16 +1,18 @@
 package main
 
-func ConvertToRoman(n int) string {
-	switch n {
-	case 1:
-		return "I"
+import "strings"
 
-	case 2:
-		return "II"
-	case 3:
-		return "III"
-	default:
-		return "not found"
+func ConvertToRoman(n int) string {
+	var result strings.Builder
+
+	if n == 4 {
+		return "IV"
 	}
+
+	for i := 0; i < n; i++ {
+		result.WriteString("I")
+	}
+
+	return result.String()
 
 }
