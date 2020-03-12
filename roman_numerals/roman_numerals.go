@@ -9,7 +9,11 @@ func ConvertToRoman(n int) string {
 		return "IV"
 	}
 
-	for i := 0; i < n; i++ {
+	for i := n; i > 0; i-- {
+		if i == 4 {
+			result.WriteString("IV")
+			break
+		}
 		result.WriteString("I")
 	}
 
