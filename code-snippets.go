@@ -3,8 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	// for loops
+	/***********************************************
+	* for loops                                    *
+	************************************************/
 	// i = index, v = copy of the element
+	
+	fmt.Println("\n-------------------\nfor loops\n")
 
 	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
 	for i, v := range pow {
@@ -28,6 +32,23 @@ func main() {
 		fmt.Printf("%d\n", i)
 	}
 
+	/***********************************************
+	* maps                                         *
+	************************************************/
+	// a map maps keys to values
 
+	fmt.Println("\n------------------------\nMaps\n")
 
+	type Vertex struct {
+		Lat, Long float64
+	}
+	
+	var m map[string]Vertex
+
+	m = make(map[string]Vertex)
+	m["Bell Labs"] = Vertex{
+		40.68433, -74.39967,
+	}
+	fmt.Println(m["Bell Labs"])
+	// prints: {40.68433 -74.39967}
 }
